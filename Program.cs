@@ -1,18 +1,29 @@
 ﻿using System;
 
+//Definimos la clase
+
 public class Program
 {
+
+    //Definimos el metodo
+
     public static void Main(String[] args)
     {
+
+        //Creamos un nuevo generador aleatorio y las variables
+
         var generadorAleatorio = new Random();
         int numeroParaAdivinar = generadorAleatorio.Next(0, 16);
         int NumeroIntroducidoUsuario = 0;
         int contador = 0;
 
+        //Introducimos las constantes
+
         const string NumeroIncorrecto = "El numero introducido es incorrecto, por favor intentalo de nuevo";
         const string NumeroMayor = "El numero que usted tiene que adivinar es mayor al introducido, pruebe a introducir un numero diferente";
         const string NumeroMenor = "El numero que usted tiene que adivinar es menor al introducido, pruebe a introducir un numero diferente";
 
+        //Escribimos cadenas de texto y las convertimos en numeros enteros
 
         Console.WriteLine("***ADIVINADOR DE NUMEROS***");
         Console.WriteLine("------------------------------------");
@@ -21,6 +32,8 @@ public class Program
         Console.WriteLine("------------------------------------");
         Console.WriteLine("Por favor introduzca el numero que desea");
         NumeroIntroducidoUsuario = Int32.Parse(Console.ReadLine());
+
+        //Insertamos los condicionales
 
         while (contador < 2)
         {
@@ -40,7 +53,7 @@ public class Program
             {
                 Console.WriteLine($"SIIUUU, LO CONSEGUISTE, FELICIDADES!! EL NÚMERO {NumeroIntroducidoUsuario} es el CORRECTOO!!!");
                 contador = 2;
-                Environment.Exit(0);
+                Environment.Exit(0);        // <--- Introducimos la clase "Environment"
             }
         }
         Console.WriteLine($"Una pena, te has quedado sin intentos, la proxima vez sera. El numero a adivinar era {numeroParaAdivinar}");
